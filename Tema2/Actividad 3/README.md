@@ -3,9 +3,9 @@
 Este repositorio contiene el desarrollo de la actividad 3 del Tema 2
 
 ## Integrantes
-* **Estudiante:** [Carlos Martínez] - Control de Planta y Gestion de Emergencias.
-* **Estudiante:** [Genesis Moya] - Gestion de almacenamiento y Comercializacion.
-* **Eslogan del Grupo:** "[Mantenlo Simple]"
+* **Estudiante:** Carlos Martínez - Control de Planta y Gestion de Emergencias.
+* **Estudiante:** Genesis Moya - Gestion de almacenamiento y Comercializacion.
+* **Eslogan del Grupo:** "Mantenlo Simple"
 
 ##  ¿Como ejecutar los scripts del Lenguaje L (Actividad III)?
 
