@@ -1,0 +1,28 @@
+// LENGUAJE L - CONTROL DE ALMACENAMIENTO Y COMERCIALIZACIÓN
+// Escenario Operativo B: Balance de Carga y Optimización Autónoma
+// Desarrollado por: Genesis Moya C.I 31.370.339
+
+// 1. LECTURA DE SENSORES Y ESTADO DEL SISTEMA
+nivel_bateria = estado_carga(banco_litio_1)
+generacion_actual = leer_flujo(inversor_paneles_solares)
+demanda_actual = leer_flujo(inversor_consumo_planta)
+
+// 2. EVALUACIÓN LÓGICA Y TOMA DE DECISIONES
+
+// Caso A: Batería óptima y generación excede demanda (Inyección a red pública)
+si (nivel_bateria > 90) Y (generacion_actual > demanda_actual) entonces
+    // Conectar el relé principal hacia la red eléctrica pública
+    conmutar_linea(rele_red_publica, CONECTADO)
+    // Ordenar la inyección del excedente
+    inyectar_red(CONECTADO)
+
+// Caso B: Batería en límite crítico y sin generación solar (Emergencia nocturna)
+sino_si (nivel_bateria < 20) Y (generacion_actual == 0) entonces
+    // Aislar sectores no esenciales para preservar energía
+    conmutar_linea(rele_linea_produccion, AISLADO)
+    conmutar_linea(rele_oficinas_administrativas, AISLADO)
+    
+    // Garantizar suministro en áreas críticas
+    conmutar_linea(rele_area_medica, CONECTADO)
+    conmutar_linea(rele_servidores_criticos, CONECTADO)
+fin_si
