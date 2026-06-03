@@ -25,4 +25,4 @@ Hemos diseñado un DSL conceptual adaptado a operadores del sistema físico simu
 3. Abra la terminal integrada de VS Code y ejecute el siguiente comando:
    **`python SimuladorLenguajeL.py`**
 4. El programa iniciará el simulador semántico interactivo de la microred. La consola le solicitará que ingrese los valores de los sensores (ej. nivel de batería al 15%, generación solar en 0 y el consumo de planta 150) para realizar una prueba de escritorio dinámica.
-5. El flujo de control evaluará el Árbol de Sintaxis Abstracta (AST) e imprimirá en consola las decisiones de conmutación de los relés (ej. aislar zonas o inyectar a la red) demostrando la coherencia lógica del Lenguaje L.
+5. El flujo de control evaluará el Árbol de Sintaxis Abstracta (AST) e imprimirá en consola las decisiones de conmutación de los relés demostrando la coherencia lógica del Lenguaje L.
