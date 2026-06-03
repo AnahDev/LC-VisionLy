@@ -20,4 +20,4 @@ mientras (leer_temperatura(bat_01) > 55) inicio
 fin
 
 // Fuera del bucle: el sistema ha vuelto a la normalidad
-emitir_alerta("NOTIFICACION: Temperatura normalizada. Planta ECO-GRID segura.");
+emitir_alerta("NOTIFICACION: Temperatura normalizada. Planta ECO-GRID segura.");N

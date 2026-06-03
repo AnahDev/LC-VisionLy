@@ -39,7 +39,7 @@ def simular_compilador():
     print(" >> [SISTEMA]: panel_array configurado en modo AISLADO.")
     print(" >> [SISTEMA]: sector_industrial desviado a RED_COMERCIAL (CONECTADO).")
     print("--------------------------------------------------")
-    print("🎉 ¡Analisis y ejecución finalizada con exito (Código 0)!")
+    print("¡Analisis y ejecución finalizada con exito!")
 
 if __name__ == "__main__":
     simular_compilador()
