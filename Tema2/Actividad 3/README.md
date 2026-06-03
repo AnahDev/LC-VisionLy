@@ -12,6 +12,7 @@ Este repositorio contiene el desarrollo de la actividad 3 del Tema 2
 Hemos diseñado un DSL conceptual adaptado a operadores del sistema físico simulado de la planta ECO-GRID
 
 ### Pasos para ejecutar el analizador en VS Code:
+#### Para el Escenario A
 1. Abra la carpeta raíz de este proyecto (`Actividad 3`) en **Visual Studio Code**.
 2. Asegúrese de que el archivo del script del compilador (`mi_analizador.py`) esté en la misma ruta.
 3. Abra el archivo de codigo correspondiente al escenario que desea evaluar (`escenario_a.lng`).
