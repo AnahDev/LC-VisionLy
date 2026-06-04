@@ -1,0 +1,23 @@
+// Codigo del Escenario Operativo A 
+// Para el monitoreo continuo y control de fuga termica en la empresa ECO-GRID
+
+init_grid;
+
+mientras (leer_temperatura(bat_01) > 55) inicio
+    
+    // 1. Activar inmediatamente el sistema de refrigeracion auxiliar
+    activar_refrigeracion(cooling_sys, CONECTADO);
+    
+    // 2. Desconectar las líneas de carga solar para detener el ingreso de energia termica
+    conmutar_linea(panel_array, AISLADO);
+    
+    // 3. Desviar el consumo del sector industrial hacia la red comercial de respaldo
+    conmutar_linea(sector_industrial, CONECTADO);
+    
+    // 4. Alerta recurrente de emergencia a la HMI mientras persista el peligro
+    emitir_alerta("ALERTA CRITICA: Fuga termica en bat_01. Protocolo de alivio activo.");
+
+fin
+
+// Fuera del bucle: el sistema ha vuelto a la normalidad
+emitir_alerta("NOTIFICACION: Temperatura normalizada. Planta ECO-GRID segura.");N
