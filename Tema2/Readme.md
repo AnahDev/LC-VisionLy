@@ -1,4 +1,4 @@
-[## Tema 2 (Los lenguajes de programación)
+## Tema 2 (Los lenguajes de programación)
 
 # 2.1.-Paradigmas.
 
