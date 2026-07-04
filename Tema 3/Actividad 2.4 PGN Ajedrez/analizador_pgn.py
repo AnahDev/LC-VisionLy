@@ -101,7 +101,7 @@ def analizador_lexico_pgn(cadena):
 if __name__ == "__main__":
     pruebas = [
         "1.e4 e5",       # Válida (Peones)
-        "12.Nf3 d6",     # Válida (Pieza blanca, Peón negro, Nro múltiple dígito)
+        "12.Nf3 d6",     # Válida (Pieza blanca, Peon negro, Nro multiple digito)
         "3.Qd1 Qh5",     # Válida (Ambas piezas mayores)
         "1.e9 e5",       # Inválida (Fila 9 no existe)
         "1.x4 e5",       # Inválida (Columna x no existe)
