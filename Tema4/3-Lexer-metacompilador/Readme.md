@@ -14,6 +14,27 @@ El lexer está construido utilizando el metacompilador **Logos**, una librería 
 
 ---
 
+### 📌 Tokens Soportados (Actuales)
+
+Token --> Descripción
+Fn --> Palabra clave fn
+Let --> Palabra clave let
+If / Else --> Palabras clave condicionales
+While --> Palabra clave de bucle
+Return --> Palabra clave return
+True / False --> Literales booleanos
+Identifier -->(String) Identificadores (ej. variable)
+Integer(i64) --> Números enteros
+Float(f64) --> Números flotantes
+String(String) -->Cadenas de texto entre comillas
+Plus, Minus, etc --> Operadores aritméticos
+Assign, Eq --> Operadores de asignación y comparación
+LParen, --> RParen Paréntesis
+LBrace, --> RBrace Llaves
+Semicolon --> Punto y coma ;
+Comma --> Coma ,
+Arrow --> Flecha ->
+
 ## 📋 Requisitos del Sistema
 
 Para compilar y ejecutar este proyecto, necesitas tener instalado:
@@ -66,14 +87,30 @@ Si prefieres usar el binario compilado directamente (ubicado en target/release/)
 
 ### 🔍 Ejemplos de Ejecución
 
-# Ejemplo 1: Archivo factorial.minirust
+### Ejemplo 1: Impresion de HOLA MUNDO ( Archivo hello.minirust )
 
-Contenido del archivo (examples/factorial.minirust):
+Contenido del archivo (examples/hello.minirust):
 
-# Comando para ejecutarlo:
+```
+fn main() {
+    let message = "Hola, mundo!";
+}
+```
+
+### Comando para ejecutarlo:
 
 bash
 
 ```
-cargo run -- examples/factorial.minirust
+cargo run -- examples/hello.minirust
+```
+
+### Salida esperada (simulada):
+
+```
+text
+
+Fn, Identifier("main"), LParen, RParen, LBrace,
+Let, Identifier("message"), Assign, String("Hola, mundo!"), Semicolon,
+RBrace
 ```
