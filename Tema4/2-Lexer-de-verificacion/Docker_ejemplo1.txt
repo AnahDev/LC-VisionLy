@@ -1,0 +1,6 @@
+# Archivo Docker basico
+FROM ubuntu:20.04
+WORKDIR /app
+COPY . /app
+RUN make /app
+CMD "python"
