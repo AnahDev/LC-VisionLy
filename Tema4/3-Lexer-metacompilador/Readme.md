@@ -1,1 +1,79 @@
-## 3. Defin ir un lenguaje L subconjunto de lenguaje Rust, construya un lexer para L utilizando metacompilador. En el informe incorpore: 1) manual de usuario completo con sus propias palabras del metacompilador seleccionado, 2) descripción de su lenguaje L diseñado, 3) documentar proceso de creación de su lexer incorporar en repositorio con su respectivo archivo marckdown de documentación y pasos a detalle de instalación o implementación del lexer.
+# 🦀 Lexer para MiniRust (Actividad 4.3 - Metacompilador Logos)
+
+## 📝 Descripción
+
+Esta actuvidad (3) implementa un **analizador léxico (lexer)** para un subconjunto del lenguaje de programación **Rust**, denominado **MiniRust**.
+
+El lexer está construido utilizando el metacompilador **Logos**, una librería de Rust que genera autómatas finitos deterministas (AFD) a partir de expresiones regulares y literales definidos en un `enum`.
+
+**¿Qué hace?**
+
+- Lee un archivo fuente escrito en MiniRust.
+- Identifica y clasifica los componentes léxicos (tokens) como palabras clave (`fn`, `let`, `if`), identificadores, números, operadores y símbolos.
+- Reporta errores léxicos cuando encuentra caracteres o patrones no definidos en el lenguaje (por ejemplo, el uso de `:` en los tipos de datos, que aún no está soportado en esta versión del lexer).
+
+---
+
+## 📋 Requisitos del Sistema
+
+Para compilar y ejecutar este proyecto, necesitas tener instalado:
+
+- **Rust** (compilador `rustc`) y **Cargo** (gestor de paquetes y construcción).
+  - Puedes instalarlos desde: [https://rustup.rs/](https://rustup.rs/)
+- **(Opcional)** Visual Studio Code con la extensión **rust-analyzer** para una mejor experiencia de desarrollo.
+
+---
+
+## ⚙️ Instalación y Compilación
+
+Sigue estos pasos para obtener el lexer en tu máquina local:
+
+1. **Clonar el repositorio** (o ubicarte dentro de la carpeta del proyecto):
+
+   ```bash
+   git clone <url_de_tu_repositorio>
+   cd LC-VisionLy/Tema4/3-Lexer-metacompilador
+   ```
+
+2. **Compilar el proyecto** (esto descargará las dependencias y generará el binario):
+
+```
+cargo build --release
+```
+
+También puedes usar `cargo build` para una compilación en modo depuración (más rápida para pruebas).
+
+### 🚀 Uso del Lexer
+
+Una vez compilado, ejecuta el lexer pasando como argumento la ruta del archivo fuente que deseas analizar.
+
+Sintaxis:
+
+```
+bash
+cargo run -- <ruta_del_archivo>
+```
+
+Ejemplo básico:
+
+bash
+cargo run -- examples/factorial.minirust
+
+Si prefieres usar el binario compilado directamente (ubicado en target/release/):
+
+./target/release/minirust_lexer.exe examples/factorial.minirust # Windows
+./target/release/minirust_lexer examples/factorial.minirust # Linux/Mac
+
+### 🔍 Ejemplos de Ejecución
+
+# Ejemplo 1: Archivo factorial.minirust
+
+Contenido del archivo (examples/factorial.minirust):
+
+# Comando para ejecutarlo:
+
+bash
+
+```
+cargo run -- examples/factorial.minirust
+```
