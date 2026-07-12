@@ -16,24 +16,25 @@ El lexer está construido utilizando el metacompilador **Logos**, una librería 
 
 ### 📌 Tokens Soportados (Actuales)
 
-Token --> Descripción
-Fn --> Palabra clave fn
-Let --> Palabra clave let
-If / Else --> Palabras clave condicionales
-While --> Palabra clave de bucle
-Return --> Palabra clave return
-True / False --> Literales booleanos
-Identifier -->(String) Identificadores (ej. variable)
-Integer(i64) --> Números enteros
-Float(f64) --> Números flotantes
-String(String) -->Cadenas de texto entre comillas
-Plus, Minus, etc --> Operadores aritméticos
-Assign, Eq --> Operadores de asignación y comparación
-LParen, --> RParen Paréntesis
-LBrace, --> RBrace Llaves
-Semicolon --> Punto y coma ;
-Comma --> Coma ,
-Arrow --> Flecha ->
+| Token              | Descripción                            |
+| :----------------- | :------------------------------------- |
+| Fn                 | Palabra clave fn                       |
+| Let                | Palabra clave let                      |
+| If / Else          | Palabras clave condicionales           |
+| While              | Palabra clave de bucle                 |
+| Return             | Palabra clave return                   |
+| True / False       | Literales booleanos                    |
+| Identifier(String) | Identificadores (ej. variable)         |
+| Integer(i64)       | Números enteros                        |
+| Float(f64)         | Números flotantes                      |
+| String(String)     | Cadenas de texto entre comillas        |
+| Plus, Minus, etc   | Operadores aritméticos                 |
+| Assign, Eq         | Operadores de asignación y comparación |
+| LParen, RParen     | Paréntesis                             |
+| LBrace, RBrace     | Llaves                                 |
+| Semicolon          | Punto y coma ;                         |
+| Comma              | Coma ,                                 |
+| Arrow              | Flecha                                 |
 
 ## 📋 Requisitos del Sistema
 
