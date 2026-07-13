@@ -1,5 +1,22 @@
 # 🦀 Lexer para MiniRust (Actividad 4.3 - Metacompilador Logos)
 
+### Estructura de carpetas
+
+```
+└── 📁3-Lexer-metacompilador
+    └── 📁minirust_lexer
+        └── 📁examples   // Ejemplos para ejecucion
+            ├── errorLexico.minirust
+            ├── factorial.minirust
+            ├── hello.minirust
+        └── 📁src
+            ├── main.rs  //archivo principal
+            ├── tokens.rs // lista de tokens definidos
+        ├── Cargo.lock    //dependencias
+        ├── Cargo.toml    //dependencias
+    └── Readme.md
+```
+
 ## 📝 Descripción
 
 Esta actuvidad (3) implementa un **analizador léxico (lexer)** para un subconjunto del lenguaje de programación **Rust**, denominado **MiniRust**.
