@@ -1,4 +1,1 @@
-fn main() {
-    let message = "Hola, mundo!";
-    println(message);
-}
+fn main() { let message = "Hola, mundo!";println(message);}
