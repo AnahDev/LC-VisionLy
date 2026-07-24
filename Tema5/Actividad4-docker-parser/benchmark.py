@@ -3,7 +3,7 @@ import subprocess
 import time
 
 def run_benchmark():
-    # 1. Compilar C
+    # Compilar C
     print(" Compilando parser en C...")
     compile_res = subprocess.run(["gcc", "parser_c.c", "-o", "parser_c"])
     if compile_res.returncode != 0:
