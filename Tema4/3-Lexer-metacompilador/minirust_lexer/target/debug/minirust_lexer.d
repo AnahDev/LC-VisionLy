@@ -1,0 +1,1 @@
+C:\academico\LC\LC-Visionly\Tema4\3-Lexer-metacompilador\minirust_lexer\target\debug\minirust_lexer.exe: C:\academico\LC\LC-Visionly\Tema4\3-Lexer-metacompilador\minirust_lexer\src\main.rs C:\academico\LC\LC-Visionly\Tema4\3-Lexer-metacompilador\minirust_lexer\src\tokens.rs

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Genoma GLC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #1a202c; color: #e2e8f0; }
+        canvas { background-color: #2d3748; border-radius: 0.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4 font-sans">
+
+    <div class="max-w-4xl w-full flex flex-col md:flex-row gap-6">
+        
+        <!-- Panel de Control -->
+        <div class="flex-1 bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h1 class="text-2xl font-bold mb-4 text-blue-400">Motor de Derivación GLC</h1>
+            <p class="text-sm mb-6 text-gray-400">Alfabeto: Σ = {a, c, g, t}</p>
+            
+            <div class="space-y-3 mb-6">
+                <p class="text-sm"><strong>a:</strong> Avanzar (dibuja línea)</p>
+                <p class="text-sm"><strong>c:</strong> Girar derecha (+45°)</p>
+                <p class="text-sm"><strong>g:</strong> Girar izquierda (-45°)</p>
+                <p class="text-sm"><strong>t:</strong> Retroceder (vuelve al vértice)</p>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-sm font-medium mb-2">Cadena del Genoma (Generada por la GLC):</label>
+                <textarea id="genomaInput" class="w-full bg-gray-900 border border-gray-600 rounded p-2 text-green-400 font-mono text-sm" rows="3" readonly></textarea>
+            </div>
+
+            <h2 class="text-lg font-semibold mb-3">Ejecutar Derivaciones:</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <button onclick="dibujar('a')" class="bg-blue-600 hover:bg-blue-500 text-white py-2 px-4 rounded transition">1. Línea Base</button>
+                <button onclick="dibujar('a c c a c c a c c a')" class="bg-blue-600 hover:bg-blue-500 text-white py-2 px-4 rounded transition">2. Cuadrado</button>
+                <button onclick="dibujar('a c a t g g a')" class="bg-blue-600 hover:bg-blue-500 text-white py-2 px-4 rounded transition">3. Rama (Y)</button>
+                <button onclick="dibujar('a c a c a t g g a t g g a c a t g g a')" class="bg-green-600 hover:bg-green-500 text-white py-2 px-4 rounded transition">4. Árbol Fractal</button>
+                <button onclick="dibujar('a c c a c c a c c a t c a g a c c a c c a c c a')" class="bg-purple-600 hover:bg-purple-500 text-white py-2 px-4 rounded transition">5. Cubo 2D</button>
+            </div>
+            
+            <button onclick="limpiar()" class="w-full mt-4 border border-red-500 text-red-500 hover:bg-red-500 hover:text-white py-2 px-4 rounded transition">Limpiar Lienzo</button>
+        </div>
+
+        <!-- Lienzo de Dibujo -->
+        <div class="flex-none flex items-center justify-center">
+            <canvas id="lienzo" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('lienzo');
+        const ctx = canvas.getContext('2d');
+        const genomaInput = document.getElementById('genomaInput');
+        
+        let distancia = 45;
+        
+        function limpiar() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            genomaInput.value = "";
+        }
+
+        async function dibujar(cadena) {
+            limpiar();
+            genomaInput.value = cadena;
+            
+            // Estado inicial de la "tortuga"
+            let x = canvas.width / 2;
+            let y = canvas.height - 50; // Empezar abajo en el centro
+            let angulo = -Math.PI / 2; // Apuntando hacia arriba (270 grados en radianes)
+            
+            // Si es el cubo, ajustamos el inicio un poco más a la izquierda y arriba
+            if(cadena.length > 25) {
+                x = 150; y = 250;
+            }
+            
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.strokeStyle = '#4ade80'; // Color verde neón
+            ctx.lineWidth = 3;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            // Animación paso a paso
+            const comandos = cadena.replace(/\s+/g, '').split('');
+            
+            for (let i = 0; i < comandos.length; i++) {
+                const comando = comandos[i];
+                
+                if (comando === 'a') {
+                    // Avanzar trazando
+                    x += Math.cos(angulo) * distancia;
+                    y += Math.sin(angulo) * distancia;
+                    ctx.lineTo(x, y);
+                } else if (comando === 'c') {
+                    // Girar derecha 45 grados
+                    angulo += (Math.PI / 4);
+                } else if (comando === 'g') {
+                    // Girar izquierda 45 grados
+                    angulo -= (Math.PI / 4);
+                } else if (comando === 't') {
+                    // Retroceder sin dibujar (pero actualizando posición)
+                    x -= Math.cos(angulo) * distancia;
+                    y -= Math.sin(angulo) * distancia;
+                    ctx.moveTo(x, y);
+                }
+                
+                ctx.stroke();
+                // Pausa artificial para crear efecto de animación
+                await new Promise(r => setTimeout(r, 150));
+            }
+        }
+        
+        // Dibujar estado inicial
+        limpiar();
+    </script>
+</body>
+</html>

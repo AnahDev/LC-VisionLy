@@ -1,0 +1,45 @@
+# Docker Compose Network Config Test 2
+version: '3.8'
+
+services:
+  web_app_1:
+    image: nginx:latest
+    networks:
+      - net_custom_1
+  web_app_2:
+    image: nginx:latest
+    networks:
+      - net_custom_1
+      - net_custom_2
+  web_app_3:
+    image: nginx:latest
+    networks:
+      - net_custom_1
+      - net_custom_2
+      - net_custom_3
+
+networks:
+  net_custom_1:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.1.0.0/16
+          gateway: 10.1.0.1
+  net_custom_2:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.2.0.0/16
+          gateway: 10.2.0.1
+  net_custom_3:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.3.0.0/16
+          gateway: 10.3.0.1
+  net_custom_4:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.4.0.0/16
+          gateway: 10.4.0.1

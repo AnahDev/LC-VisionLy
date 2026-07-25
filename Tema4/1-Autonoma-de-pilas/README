@@ -1,0 +1,23 @@
+# Punto 1: Autómatas de Pila (Definición, Modelado y Simulación)
+
+Este apartado del repositorio contiene la base teórica y la validación práctica correspondiente al Punto 1 del Tema 4 (Análisis Léxico / Autómatas de Pila)
+
+## Simulación Práctica del Lenguaje $L = \{a^n b^n \mid n \ge 1\}$
+
+Para demostrar de forma empírica la lógica de esta máquina teórica, se construyó un script de simulación en JavaScript (Node.js) que modela el comportamiento del autómata para el lenguaje clásico no regular $a^n b^n$.
+
+### Lógica del Algoritmo:
+1. **Estado $q_0$ (Apilado):** Por cada símbolo `a` leído de la cadena de entrada, el sistema realiza una operación `PUSH` introduciendo un elemento (`X`) en la pila. Al detectar la primera `b`, efectúa un `POP` y transita al estado $q_1$.
+2. **Estado $q1$ (Desapilado):** Por cada símbolo `b` leído, el sistema realiza un `POP` eliminando una `X` de la pila.
+3. **Estado $q2$ (Aceptación):** Mediante una transición vacía ($\epsilon$), si la entrada ha culminado y el tope de la pila vuelve a apuntar al símbolo inicial Z0, la cadena se declara formalmente **Aceptada**. Cualquier asimetría provoca el rechazo inmediato.
+
+## Instrucciones de Ejecución 
+Para ejecutar esta simulación en tu entorno local (probado en Linux Mint), sigue estos sencillos pasos:
+
+### 1. Requisitos Previos 
+Asegúrate de contar con **Node.js** instalado en tu sistema. Puedes comprobarlo ejecutando:
+    node -v
+
+### 2. Ejecutar Similador
+    node simulador_pila.js
+

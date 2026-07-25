@@ -1,0 +1,19 @@
+# Ejercicio 4: Analizador Sintáctico de Redes Docker Compose (Experimento Multilenguaje)
+
+Este módulo contiene la implementación y evaluación de rendimiento de tres analizadores léxico-sintácticos desarrollados en **Lenguaje C**, **Node.js (JavaScript)** y **Python 3** para procesar configuraciones de red en archivos `docker-compose.yml`.
+
+**Requisitos e Instalación***
+
+Asegúrate de contar con las siguientes herramientas instaladas:
+    Compilador de C, Python y Node.js
+
+**Instrucciones de Ejecución**
+Sigue estos pasos dentro de la carpeta del ejercicio para reproducir el experimento:
+
+1. Generar el Dataset de Prueba
+Crea los 10 archivos de prueba docker-compose.yml con densidad de red incremental:
+    python3 generar_dataset.py
+
+2. Ejecutar la Suite de Mediciones (Benchmark)
+Compila el binario en C, ejecuta secuencialmente los tres parsers contra los 10 archivos y guarda las métricas en tiempos.csv:
+    python3 benchmark.py
