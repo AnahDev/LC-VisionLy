@@ -147,7 +147,7 @@ class UnegScriptHibridoCompiler:
 if __name__ == "__main__":
     codigo_prueba = 'pront x = 5; if x > 3 prnt(x) else print("no")'
     
-    print("=== EJECUCIÓN DEL ASISTENTE HÍBRIDO UNEGSCRIPT ===")
+    print("=== EJECUCIÓN DEL ASISTENTE HIBRIDO UNEGSCRIPT ===")
     print(f"Código fuente de entrada: {codigo_prueba}\n")
     
     asistente = UnegScriptHibridoCompiler(codigo_prueba)
