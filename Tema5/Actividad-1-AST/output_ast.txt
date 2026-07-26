@@ -1,0 +1,25 @@
+//AST (representación en árbol): 
+ 
+    +
+   / \
+  3   *
+     / \
+    5   2
+
+
+
+// AST para '3 + 5 * 2':
+BinOp(+)
+  Num(3)
+  BinOp(*)
+    Num(5)
+    Num(2)
+
+// AST conceptual para 'x = (10 + y) * 2':
+BinOp(=)
+  Var(x)
+  BinOp(*)
+    BinOp(+)
+      Num(10)
+      Var(y)
+    Num(2)
