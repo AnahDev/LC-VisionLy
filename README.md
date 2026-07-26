@@ -13,17 +13,17 @@
 
 ## ESTRUCTURA GENERAL DE CARPERTAS (Que encontraras aqui..)
 
-```
-└── 📁LC-VisionLy  -->  //Carpeta contenedora
-    └── 📁Tema1
-        └── 📁Libros
-            ├── Readme.md
-        ├── Lenguaje Y Compiladores_Laminas_Visionly.pdf
-        ├── Lenguaje y Compiladores_Tema1_Informe_Visionly.pdf
-        ├── Readme.md
+└── 📁LC-VisionLy --> //Carpeta contenedora
 
+└── 📁Tema1
+└── 📁Libros
+├── Readme.md
+├── Lenguaje Y Compiladores_Laminas_Visionly.pdf
+├── Lenguaje y Compiladores_Tema1_Informe_Visionly.pdf
+├── Readme.md
 
     └── 📁Tema2
+
         └── 📁Actividad_1
             ├── Readme.md
         └── 📁Actividad_2
@@ -91,5 +91,38 @@
         └── 📁4-Aplicacion-de-uso-Flex
             ├── .gitkeep
             ├── Readme.md
+
+    └── 📁Tema5
+        └── 📁Actividad-1-AST
+            ├── ast_expresiones.py
+            ├── output_ast.txt
+        └── 📁Actividad-2-LL-LR
+            ├── parser_LL_manual.py
+            ├── parser_LR_PLY.py
+            ├── requirements.txt
+        └── 📁Actividad4-docker-parser
+            └── 📁dataset
+                ├── docker-compose-1.yml
+                ├── docker-compose-10.yml
+                ├── docker-compose-2.yml
+                ├── docker-compose-3.yml
+                ├── docker-compose-4.yml
+                ├── docker-compose-5.yml
+                ├── docker-compose-6.yml
+                ├── docker-compose-7.yml
+                ├── docker-compose-8.yml
+                ├── docker-compose-9.yml
+            ├── benchmark.py
+            ├── generar_dataset.py
+            ├── parser_c.c
+            ├── parser_js.js
+            ├── parser_python.py
+            ├── README
+            ├── tiempos.csv
+        └── 📁Actividad5-asistente_unegscript
+            ├── asistente_unegscript.py
+        ├── README.md
+        ├── Tema 5_Informe_VISIONLY.pdf
     └── README.md  --> //Archivo README principal
-```
+
+``
