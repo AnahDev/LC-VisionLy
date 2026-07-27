@@ -2,6 +2,32 @@
 import ply.lex as lex
 import ply.yacc as yacc
 
+# Definición de los nodos del AST (copiado de la pregunta 1)
+class Num:
+    def __init__(self, value):
+        self.value = value
+
+class Var:
+    def __init__(self, name):
+        self.name = name
+
+class BinOp:
+    def __init__(self, left, op, right):
+        self.left = left
+        self.op = op
+        self.right = right
+
+# Función para imprimir el AST en formato texto (también necesaria)
+def print_ast(node, indent=0):
+    if isinstance(node, Num):
+        print('  ' * indent + f'Num({node.value})')
+    elif isinstance(node, Var):
+        print('  ' * indent + f'Var({node.name})')
+    elif isinstance(node, BinOp):
+        print('  ' * indent + f'BinOp({node.op})')
+        print_ast(node.left, indent+1)
+        print_ast(node.right, indent+1)
+
 # Tokens
 tokens = ('NUM', 'VAR', 'PLUS', 'MINUS', 'TIMES', 'DIVIDE', 'LPAREN', 'RPAREN')
 
